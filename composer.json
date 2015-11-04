@@ -1,0 +1,25 @@
+{
+    "name": "opensoft/tfs-rest-api",
+    "description": "An api wrapper for the TFS/VisualStudio REST API",
+    "type": "library",
+    "keywords": ["tfs", "visual studio", "vso", "rest", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Fullmer",
+            "email": "richard.fullmer@opensoftdev.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Opensoft\\Tfs\\Rest\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0"
+    }
+}
