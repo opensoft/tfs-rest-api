@@ -35,4 +35,28 @@ class WorkItemTracking extends AbstractApi
             ]
         ]);
     }
+
+    /**
+     * Update a work item
+     *
+     * @see https://www.visualstudio.com/integrate/api/wit/work-items#Updateworkitems
+     *
+     * @param integer $id
+     * @param array $operations
+     * @throws GuzzleException
+     * @return Response
+     */
+    public function patchWorkItem($id, $operations)
+    {
+        return $this->clientHelper->patch('/_apis/wit/workitems/' . $id, [
+            'query' => [
+                'api-version' => '1.0'
+            ],
+            'json' => $operations,
+            'headers' => [
+                // set their custom content type
+                'Content-Type' => 'application/json-patch+json'
+            ]
+        ]);
+    }
 }

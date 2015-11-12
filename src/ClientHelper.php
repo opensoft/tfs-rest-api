@@ -56,4 +56,19 @@ class ClientHelper
 
         return new Response($this, $this->client->get($url, $options));
     }
+
+    /**
+     * @param string $url
+     * @param array $options
+     * @throws GuzzleException
+     * @return Response
+     */
+    public function patch($url, array $options = [])
+    {
+        if (strpos($url, 'http') !== 0) {
+            $url = $this->baseUrl . '/' . $this->collection . '/' . ltrim($url, '/');
+        }
+
+        return new Response($this, $this->client->patch($url, $options));
+    }
 }
